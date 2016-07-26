@@ -1,0 +1,12 @@
+# Homebrew
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# Font
+if ! [ -f "$HOME/Library/Fonts/Inconsolata.otf" ]; then
+    echo "Installing Inconsolata font"
+    curl http://levien.com/type/myfonts/Inconsolata.otf > "$HOME/Library/Fonts/Inconsolata.otf"
+fi
+
+if [ -d "/opt/chefdk/bin" ]; then
+    export PATH="/opt/chefdk/bin:$PATH"
+fi
