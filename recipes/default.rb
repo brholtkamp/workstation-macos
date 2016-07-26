@@ -2,8 +2,11 @@
 # Cookbook Name:: workstation-macos
 # Recipe:: default
 #
-# Copyright (c) 2016 Brian Holtkamp, All Rights Reserved.
 
-%w(git tig vim zsh).each do |package|
-  package package
+include_recipe 'workstation-macos::install_homebrew'
+
+# Set ZSH as the main shell
+user node['workstation']['user'] do
+  action :modify
+  shell '/usr/bin/zsh'
 end
