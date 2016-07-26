@@ -10,3 +10,5 @@ user node['workstation']['user'] do
   action :modify
   shell '/usr/bin/zsh'
 end
+
+include_recipe 'workstation-common::default'
