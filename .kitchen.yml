@@ -3,7 +3,7 @@ driver:
   name: vagrant
 
 provisioner:
-  name: chef_zero
+  name: chef_solo
 
 platforms:
   - name: jhcook/osx-elcapitan-10.11
@@ -11,5 +11,9 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[homebrew::default]
       - recipe[workstation-macos::default]
+    attributes:
+      workstation:
+        packages: ['git', 'tig']
+        applications: ['google-chrome', 'ccleaner']
+        user: 'vagrant'
