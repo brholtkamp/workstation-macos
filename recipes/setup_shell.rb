@@ -7,7 +7,10 @@ include_recipe 'workstation-macos::install_homebrew'
 
 # Make sure zsh is installed
 homebrew_package 'zsh'
-homebrew_package 'font-terminus'
+
+# Install default font
+homebrew_tap 'caskroom/fonts'
+homebrew_cask 'font-terminus'
 
 include_recipe 'workstation-common::make_zsh_default'
 include_recipe 'workstation-common::install_dotfiles'
