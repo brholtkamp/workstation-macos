@@ -12,6 +12,7 @@ suites:
   - name: default
     run_list:
       - recipe[workstation-macos::default]
+      - recipe[workstation-macos::install_applications]
     attributes:
       workstation:
         packages: ['git', 'tig']
