@@ -8,7 +8,8 @@ include_recipe 'homebrew::default'
 
 homebrew_package 'mas'
 
-execute "mas signin #{node['workstation']['mas']['email']} #{node['workstation']['mas']['password']}" do
+execute 'mas signin' do
+  command "mas signin #{node['workstation']['mas']['email']} '#{node['workstation']['mas']['password']}'"
   sensitive true
 end
 
@@ -17,5 +18,6 @@ node['workstation']['mas']['applications'].each do |app|
 end
 
 execute "mas signout" do
+  command 'mas signout'
   sensitive true
 end
