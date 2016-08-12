@@ -6,22 +6,21 @@
 
 include_recipe 'homebrew::default'
 
-homebrew_package 'mas'
-homebrew_package 'reattach-to-user-namespace'
-
-execute 'mas signin' do
-  command "reattach-to-user-namespace mas signin #{node['workstation']['mas']['email']} '#{node['workstation']['mas']['password']}'"
-  user node['workstation']['user']
+mac_app_store_mas 'setup mas' do
+  source :homebrew
+  username node['workstation']['mas']['username']
+  password node['workstation']['mas']['password']
+  system_user node['workstation']['user']
+  use_rtun true
+  action %i(install sign_out sign_in upgrade upgrade_apps)
 end
 
 node['workstation']['mas']['applications'].each do |app|
-  execute "mas install #{app}" do
-    user node['workstation']['user']
+  mac_app_store_app "install #{app}" do
+    app_name app
+    system_user node['workstation']['user']
+    use_rtun true
+    action :install
+    not_if { ::Dir.exist?("/Applications/#{app}.app/") }
   end
-end
-
-execute 'mas signout' do
-  command 'reattach-to-user-namespace mas signout'
-  sensitive true
-  user node['workstation']['user']
 end
