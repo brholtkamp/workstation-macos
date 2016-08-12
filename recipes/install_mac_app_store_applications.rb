@@ -14,12 +14,12 @@ mac_app_store_mas 'setup mas' do
   action %i(install sign_in upgrade upgrade_apps)
 end
 
-node['workstation']['mas']['applications'].each do |app|
+node['workstation']['mas']['applications'].each do |app, fileName|
   mac_app_store_app "install #{app}" do
     app_name app
     system_user node['workstation']['user']
     use_rtun true
     action :install
-    not_if { ::Dir.exist?("/Applications/#{app}.app/") }
+    not_if { ::Dir.exist?("/Applications/#{fileName}.app/") }
   end
 end
