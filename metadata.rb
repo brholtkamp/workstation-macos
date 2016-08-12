@@ -9,5 +9,6 @@ source_url 'https://github.com/brholtkamp/workstation-macos'
 issues_url 'https://github.com/brholtkamp/workstation-macos/issues'
 
 depends 'homebrew'
+depends 'mac-app-store'
 depends 'mac_os_x'
 depends 'workstation-common'
