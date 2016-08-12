@@ -14,7 +14,7 @@ end
 
 node['workstation']['mac_app_store_applications'].each do |package|
   mac_app_store_app package do
-    action :upgrade
+    action :install
     system_user node['workstation']['user']
     use_rtun true
   end
