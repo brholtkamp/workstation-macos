@@ -4,7 +4,7 @@ maintainer_email 'brholtkamp@gmail.com'
 license 'MIT'
 description 'Installs/Configures workstation-macos'
 long_description 'Installs/Configures workstation-macos'
-version '0.1.0'
+version '0.1.1'
 source_url 'https://github.com/brholtkamp/workstation-macos'
 issues_url 'https://github.com/brholtkamp/workstation-macos/issues'
 
