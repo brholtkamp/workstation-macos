@@ -1,4 +1,3 @@
-
 #
 # Cookbook Name:: workstation-macos
 # Recipe:: install_mac_app_store_applications
@@ -12,7 +11,7 @@ mac_app_store_mas 'setup mas' do
   password node['workstation']['mas']['password']
   system_user node['workstation']['user']
   use_rtun true
-  action %i(install sign_out sign_in upgrade upgrade_apps)
+  action %i(install sign_in upgrade upgrade_apps)
 end
 
 node['workstation']['mas']['applications'].each do |app|
