@@ -10,14 +10,16 @@ homebrew_package 'mas'
 
 execute 'mas signin' do
   command "mas signin #{node['workstation']['mas']['email']} '#{node['workstation']['mas']['password']}'"
-  sensitive true
+  user node['workstation']['user']
 end
 
 node['workstation']['mas']['applications'].each do |app|
-  execute "mas install #{app}"
+  execute "mas install #{app}" do
+    user node['workstation']['user']
+  end
 end
 
-execute "mas signout" do
-  command 'mas signout'
+execute 'mas signout' do
   sensitive true
+  user node['workstation']['user']
 end
