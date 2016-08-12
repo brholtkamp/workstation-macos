@@ -5,7 +5,7 @@
 
 include_recipe 'homebrew::default'
 
-mac_app_store_mas 'setup mas' do
+mac_app_store_mas 'mas signin' do
   source :homebrew
   username node['workstation']['mas']['email']
   password node['workstation']['mas']['password']
@@ -25,7 +25,10 @@ node['workstation']['mas']['applications'].each do |app, fileName|
 end
 
 mac_app_store_mas 'mas signout' do
-  action :sign_out
+  source :homebrew
+  username node['workstation']['mas']['email']
+  password node['workstation']['mas']['password']
   system_user node['workstation']['user']
   use_rtun true
+  action :sign_out
 end
