@@ -15,7 +15,7 @@ execute 'mas signin' do
 end
 
 node['workstation']['mas']['applications'].each do |app|
-  execute "reattach-to-user-namespace mas install #{app}" do
+  execute "mas install #{app}" do
     user node['workstation']['user']
   end
 end
