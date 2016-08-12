@@ -5,6 +5,13 @@
 
 include_recipe 'homebrew::default'
 
+mac_app_store_mas 'mas signout' do
+  action :sign_out
+  system_user node['workstation']['user']
+  use_rtun true
+  only_if { ::File.exist?('/usr/local/bin/mas') }
+end
+
 mac_app_store_mas 'setup mas' do
   source :homebrew
   username node['workstation']['mas']['email']
