@@ -1,0 +1,6 @@
+# Homebrew
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# Aliases
+alias ls="ls -G"
+alias ll="ls -laG"
