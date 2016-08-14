@@ -10,7 +10,7 @@ include_recipe 'homebrew::default'
 end
 
 execute 'mas signin' do
-  command "reattach-to-user-namespace mas signin #{node['workstation']['mas']['email']} '#{node['workstation']['mas']['password']}"
+  command "reattach-to-user-namespace mas signin #{node['workstation']['mas']['email']} '#{node['workstation']['mas']['password']}'"
   user node['workstation']['user']
   sensitive true
   returns [0,7]
