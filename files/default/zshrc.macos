@@ -6,4 +6,4 @@ alias ls="ls -G"
 alias ll="ls -laG"
 
 # ChefDK
-export PATH="$PATH:/opt/chefdk/bin"
+export PATH="$PATH:$HOME/.chefdk/gem/ruby/2.1.0/bin"
