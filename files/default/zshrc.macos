@@ -1,0 +1,9 @@
+# Homebrew
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+
+# Aliases
+alias ls="ls -G"
+alias ll="ls -laG"
+
+# ChefDK
+export PATH="$PATH:$HOME/.chefdk/gem/ruby/2.1.0/bin"

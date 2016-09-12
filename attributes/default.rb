@@ -1,8 +1,13 @@
-default['workstation']['applications'] = %w(1password alfred ccleaner dropbox flux google-chrome keepingyouawake skype slack spotify the-unarchiver visual-studio-code)
-default['workstation']['mac_app_store_applications'] = %w(Pages Keynote DaisyDisk Moom Reeder\ 3 Fantastical\ 2\ -\ Calendar\ and\ Reminders Xcode)
-default['workstation']['games'] = %w(battle-net steam)
-default['workstation']['plists'] = %w(com.googlecode.iterm2.plist com.manytricks.Moom.plist)
+default['workstation']['applications'] = []
+default['workstation']['commands'] = []
+default['workstation']['games'] = []
+default['workstation']['plists'] = []
 
 # Mac App Store
-default['mac_app_store']['username'] = nil
-default['mac_app_store']['password'] = nil
+default['workstation']['mas']['applications'] = [[]] # List of lists of ['Application name', 'Application.app filename']
+default['workstation']['mas']['email'] = nil
+default['workstation']['mas']['password'] = nil
+
+# mac_os_x Settings
+default['mac_os_x']['settings'] = {}
+default['mac_os_x']['settings_user'] = nil
