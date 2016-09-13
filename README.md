@@ -27,7 +27,7 @@ The macOS cookbook that's part of the [workstation-common](https://github.com/br
 - `node['workstation']['commands']`: Commands to run when Chef runs.
 - `node['workstation']['games']`: The list of game applications to install.
 - `node['workstation']['plists']`: The list of `.plist` files to copy into the user's settings.
-- `node['workstation']['mas']['applications']`: A list of `['application name', 'Application.app filename']` containing applications to install from the Mac App Store.
+- `node['workstation']['mas']['applications']`: A list of (the application's [mas id]("https://github.com/argon/mas"), application's Application.app filename) containing applications to install from the Mac App Store.
 - `node['workstation']['mas']['email']`: Email address to use to log into the Mac App Store.
 - `node['workstation']['mas']['password']`: Password of account to use to log into the Mac App Store.
 
