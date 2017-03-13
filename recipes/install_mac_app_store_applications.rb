@@ -13,7 +13,7 @@ execute 'mas signin' do
   command "reattach-to-user-namespace mas signin #{node['workstation']['mas']['email']} '#{node['workstation']['mas']['password']}'"
   user node['workstation']['user']
   sensitive true
-  returns [0, 7]
+  returns [0, 1, 7]
 end
 
 execute 'mas upgrade' do
